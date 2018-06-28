@@ -146,10 +146,12 @@ class LotomaticConnector
         ]);
     }
 
-    public function gameInitDemo($game_uuid, $return_url = "", $language = "en")
+    public function gameInitDemo($game_uuid, $player_id, $player_name, $return_url = "", $language = "en")
     {
         return $this->sendRequest("games/init-demo", [
             "game_uuid" => (int)$game_uuid,
+            "player_id" => (int)$player_id,
+            "player_name" => (string)$player_name,
             "return_url" => $return_url,
             "language" => $language
         ]);
